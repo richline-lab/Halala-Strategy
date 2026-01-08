@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير استراتيجي - هللة بلس (Halala Plus)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        },
+                        brand: {
+                            emerald: '#10b981',
+                            gold: '#f59e0b',
+                            cyan: '#06b6d4',
+                            blue: '#38bdf8',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #020617; 
+            color: #f1f5f9; 
+            scroll-behavior: smooth;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 20%);
+        }
+
+        .glass-panel { 
+            background: rgba(30, 41, 59, 0.4); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 1.5rem;
+        }
+
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            background: rgba(30, 41, 59, 0.6);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .accent-line {
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(90deg, #10b981, transparent);
+            border-radius: 2px;
+            margin-top: 0.5rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+        th { text-align: right; padding: 1rem; color: #94a3b8; font-size: 0.875rem; font-weight: 600; }
+        td { padding: 1rem; background: rgba(15, 23, 42, 0.5); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        td:first-child { border-right: 1px solid rgba(255, 255, 255, 0.05); border-radius: 0 0.75rem 0.75rem 0; }
+        td:last-child { border-left: 1px solid rgba(255, 255, 255, 0.05); border-radius: 0.75rem 0 0 0.75rem; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header Section (Richline Identity) -->
+    <header class="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-blue/5 blur-[120px] rounded-full -z-10 animate-pulse-slow"></div>
+        
+        <div class="relative group mb-8">
+            <img src="https://i.ibb.co/XfxF1p9p/file.jpg" alt="Logo" class="relative h-32 w-auto rounded-3xl shadow-2xl border border-white/10 animate-float">
+        </div>
+        
+        <div class="space-y-4 max-w-4xl relative z-10">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 tracking-tight leading-tight">
+                تقرير استراتيجي شامل: خطة عمل وتسريع النمو لمنصة هللة بلس
+            </h1>
+            <p class="text-brand-blue font-bold text-lg uppercase tracking-widest">استراتيجية متكاملة لزيادة الاستحواذ وتعظيم قيمة برامج الولاء</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 max-w-6xl pb-24 space-y-24">
+
+        <!-- Executive Summary -->
+        <section class="reveal">
+            <div class="glass-panel p-8 md:p-12 border-l-4 border-l-brand-emerald">
+                <h2 class="text-2xl font-black text-white mb-4">الملخص التنفيذي</h2>
+                <div class="accent-line mb-6"></div>
+                <div class="grid md:grid-cols-2 gap-8 text-slate-300 leading-relaxed">
+                    <p>
+                        يشهد قطاع التكنولوجيا المالية (Fintech) في المملكة العربية السعودية تحولاً جذرياً مدفوعاً برؤية المملكة 2030، التي تهدف إلى رفع نسبة المعاملات غير النقدية إلى 70% وتعزيز ثقافة الادخار والتخطيط المالي لدى الأفراد. في هذا السياق، تبرز منصة هللة بلس (Halala Plus) كحل مبتكر يقع عند تقاطع حاجتين أساسيتين للمستهلك السعودي: الرغبة في الادخار دون عناء (عبر التقنية المالية)، والحاجة إلى تعظيم الاستفادة من برامج الولاء المجزأة.
+                    </p>
+                    <p>
+                        يقدم هذا التقرير خطة عمل استراتيجية لمدة 3 أشهر، ضمن ميزانية رسوم خدمة قدرها 6,400 ريال سعودي، تهدف بشكل رئيسي إلى زيادة تحميلات التطبيق وتحقيق نمو في المبيعات بنسبة تصل إلى 60% عبر استراتيجيات الجماهير المشابهة (Lookalike Audiences).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Strategic Analysis -->
+        <section class="reveal space-y-8">
+            <div class="flex items-center gap-4">
+                <span class="text-4xl font-black opacity-20">01</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">التحليل الاستراتيجي ونموذج العمل</h2>
+                    <div class="accent-line"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 section-card">
+                    <div class="text-brand-emerald text-3xl mb-4">🪙</div>
+                    <h3 class="text-lg font-bold text-white mb-2">الادخار اللاواعي</h3>
+                    <p class="text-sm text-slate-400">معالجة "ألم الدفع" في علم الاقتصاد السلوكي عبر تقنية جبر الكسور وتقريب الفكة آلياً.</p>
+                </div>
+                <div class="glass-panel p-6 section-card">
+                    <div class="text-brand-gold text-3xl mb-4">💎</div>
+                    <h3 class="text-lg font-bold text-white mb-2">تسييل الولاء</h3>
+                    <p class="text-sm text-slate-400">تحويل نقاط الولاء المشتتة والمهملة إلى نقد حقيقي يُستثمر أو يُدخر، مما يخلق شعوراً بالمال المكتشف.</p>
+                </div>
+                <div class="glass-panel p-6 section-card">
+                    <div class="text-brand-cyan text-3xl mb-4">🎟️</div>
+                    <h3 class="text-lg font-bold text-white mb-2">شبكة الخصومات</h3>
+                    <p class="text-sm text-slate-400">أكثر من 2,500 عرض وخصم لضمان تقديم قيمة فورية للمستخدم والحفاظ على معدلات الاحتفاظ.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8">
+                <h4 class="text-brand-emerald font-bold mb-6 flex items-center gap-2">🎯 تقسيم الجمهور المستهدف</h4>
+                <div class="space-y-4">
+                    <div class="flex flex-col md:flex-row gap-4 border-b border-white/5 pb-4">
+                        <div class="md:w-1/3 font-bold text-white">الجيل زد (Gen Z)</div>
+                        <div class="md:w-2/3 text-slate-400 text-sm">"المدخر الطموح" - طلاب وجيل رقمي. الرسالة: قهوتك اليومية هي تذكرتك للسفر. استهداف: TikTok & Snap.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 border-b border-white/5 pb-4">
+                        <div class="md:w-1/3 font-bold text-white">جيل الألفية (Millennials)</div>
+                        <div class="md:w-2/3 text-slate-400 text-sm">"مدير ميزانية الأسرة" - موظفون وآباء. الرسالة: لا تضيع نقاطك، حولها كاش ووفر للمنزل. استهداف: Instagram & X.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="md:w-1/3 font-bold text-white">قطاع الأعمال (B2B)</div>
+                        <div class="md:w-2/3 text-slate-400 text-sm">"مدراء الموارد البشرية" - شركات تبحث عن رفاهية موظفيها. الرسالة: امنح موظفيك رفاهية مالية. استهداف: LinkedIn.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Competitor Analysis -->
+        <section class="reveal space-y-8">
+            <div class="flex items-center gap-4">
+                <span class="text-4xl font-black opacity-20">02</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">تحليل المنافسين والمكانة السوقية</h2>
+                    <div class="accent-line"></div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الميزة</th>
+                            <th>هللة بلس (Halala Plus)</th>
+                            <th>هكبة (Hakbah)</th>
+                            <th>الراجحي (وافر)</th>
+                            <th>STC Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr>
+                            <td class="font-bold text-white">الآلية الأساسية</td>
+                            <td>جبر الكسور + تسييل النقاط</td>
+                            <td>جمعيات دورية رقمية</td>
+                            <td>جبر الكسور (بنكي)</td>
+                            <td>محفظة مدفوعات</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-white">الاستقلالية</td>
+                            <td class="text-brand-emerald">مستقل (Open Banking)</td>
+                            <td>مستقل</td>
+                            <td>عملاء الراجحي فقط</td>
+                            <td>مستقل (محفظة)</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-white">الميزة التنافسية</td>
+                            <td>الادخار اللاواعي + الخصومات</td>
+                            <td>الالتزام الاجتماعي</td>
+                            <td>السهولة والراحة</td>
+                            <td>الاستخدام اليومي</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                <div class="glass-panel p-6 border-t-4 border-t-emerald-500">
+                    <h4 class="text-emerald-500 font-black mb-2 uppercase text-xs">Strengths</h4>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">قاعدة بيانات لـ 252 ألف مستخدم، ترخيص SAMA، وتنوع الخدمات بين ادخار وخصومات.</p>
+                </div>
+                <div class="glass-panel p-6 border-t-4 border-t-rose-500">
+                    <h4 class="text-rose-500 font-black mb-2 uppercase text-xs">Weaknesses</h4>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">تعقيد شرح مفهوم "المصرفية المفتوحة" للجمهور وتشتت صفحة الهبوط الحالية.</p>
+                </div>
+                <div class="glass-panel p-6 border-t-4 border-t-brand-cyan">
+                    <h4 class="text-brand-cyan font-black mb-2 uppercase text-xs">Opportunities</h4>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">الموسمية (رمضان/الأعياد)، نمو تيك توك، واهتمام الجمهور المتزايد بالتوفير بسبب التضخم.</p>
+                </div>
+                <div class="glass-panel p-6 border-t-4 border-t-brand-gold">
+                    <h4 class="text-brand-gold font-black mb-2 uppercase text-xs">Threats</h4>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">تشبع إعلانات التمويل والمخاوف الأمنية المتعلقة بربط الحسابات البنكية بتطبيقات خارجية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CRO & Marketing -->
+        <section class="reveal space-y-12">
+            <div class="flex items-center gap-4">
+                <span class="text-4xl font-black opacity-20">03</span>
+                <div>
+                    <h2 class="text-2xl font-black text-white">استراتيجية النمو وتحسين التحويل (CRO)</h2>
+                    <div class="accent-line"></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-brand-emerald flex items-center gap-2">🚀 صفحة الهبوط الذكية</h3>
+                    <p class="text-slate-400 text-sm">تصميم صفحة هبوط مخصصة تركز على هدف واحد فقط: تحميل التطبيق والتسجيل، من خلال:</p>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start gap-3"><span class="text-brand-emerald">✔</span> عنوان عاطفي: "فكتك تصنع ثروتك.. ونقاطك ترجع لك كاش".</li>
+                        <li class="flex items-start gap-3"><span class="text-brand-emerald">✔</span> حاسبة ادخار تفاعلية تظهر "المال المهدور" للمستخدم.</li>
+                        <li class="flex items-start gap-3"><span class="text-brand-emerald">✔</span> دليل ثقة بارز: "مرخص من البنك المركزي" وشهادات العملاء.</li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-brand-cyan flex items-center gap-2">📈 إعلانات الجماهير المشابهة</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-navy-800 p-4 rounded-xl border border-white/5 text-center group hover:border-brand-blue transition-all">
+                            <p class="text-white font-bold">Snapchat</p>
+                            <p class="text-[10px] text-slate-500 uppercase">Story & Collection Ads</p>
+                        </div>
+                        <div class="bg-navy-800 p-4 rounded-xl border border-white/5 text-center group hover:border-brand-blue transition-all">
+                            <p class="text-white font-bold">TikTok</p>
+                            <p class="text-[10px] text-slate-500 uppercase">Spark & UGC Content</p>
+                        </div>
+                        <div class="bg-navy-800 p-4 rounded-xl border border-white/5 text-center group hover:border-brand-blue transition-all">
+                            <p class="text-white font-bold">Google Search</p>
+                            <p class="text-[10px] text-slate-500 uppercase">App Install (UAC)</p>
+                        </div>
+                        <div class="bg-navy-800 p-4 rounded-xl border border-white/5 text-center group hover:border-brand-blue transition-all">
+                            <p class="text-white font-bold">LinkedIn</p>
+                            <p class="text-[10px] text-slate-500 uppercase">B2B Strategy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="reveal space-y-12">
+            <h2 class="text-2xl font-black text-white text-center">خارطة طريق التنفيذ (90 يوم)</h2>
+            <div class="relative pt-8">
+                <div class="absolute right-1/2 top-0 bottom-0 w-1 bg-brand-emerald/10 -translate-x-1/2 hidden md:block"></div>
+                
+                <div class="space-y-12">
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2 md:text-left text-slate-500 font-bold uppercase text-xs">الشهر الأول: التأسيس</div>
+                        <div class="absolute right-1/2 w-4 h-4 bg-brand-emerald rounded-full -translate-x-1/2 border-4 border-navy-950 z-10 hidden md:block"></div>
+                        <div class="md:w-1/2 glass-panel p-6 border-brand-emerald/20">
+                            <h4 class="text-white font-bold mb-2">إطلاق صفحة الهبوط والتتبع</h4>
+                            <p class="text-xs text-slate-400">تصميم الصفحة، ربط البكسلات، وبناء الجماهير المشابهة من بيانات الـ 252 ألف مستخدم.</p>
+                        </div>
+                    </div>
+                    <div class="relative md:flex flex-row-reverse items-center gap-8">
+                        <div class="md:w-1/2 md:text-right text-slate-500 font-bold uppercase text-xs">الشهر الثاني: التحسين</div>
+                        <div class="absolute right-1/2 w-4 h-4 bg-brand-cyan rounded-full -translate-x-1/2 border-4 border-navy-950 z-10 hidden md:block"></div>
+                        <div class="md:w-1/2 glass-panel p-6 border-brand-cyan/20">
+                            <h4 class="text-white font-bold mb-2">إعادة الاستهداف وتوسيع النطاق</h4>
+                            <p class="text-xs text-slate-400">تحليل الأداء، تفعيل حملات Retargeting للمترددين، وتحسين تكلفة التحميل (CPI).</p>
+                        </div>
+                    </div>
+                    <div class="relative md:flex items-center gap-8">
+                        <div class="md:w-1/2 md:text-left text-slate-500 font-bold uppercase text-xs">الشهر الثالث: التعظيم</div>
+                        <div class="absolute right-1/2 w-4 h-4 bg-brand-gold rounded-full -translate-x-1/2 border-4 border-navy-950 z-10 hidden md:block"></div>
+                        <div class="md:w-1/2 glass-panel p-6 border-brand-gold/20">
+                            <h4 class="text-white font-bold mb-2">تحقيق هدف النمو (60%+)</h4>
+                            <p class="text-xs text-slate-400">توسيع نطاق الاستهداف، حملة نهاية الربع الضاغطة، وتقديم التقرير النهائي للـ ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & Value -->
+        <section class="reveal">
+            <div class="max-w-4xl mx-auto glass-panel overflow-hidden border-brand-blue/20">
+                <div class="bg-brand-blue/10 p-10 text-center border-b border-white/5">
+                    <h2 class="text-3xl font-black text-white mb-2">عرض الاستثمار في النمو</h2>
+                    <p class="text-brand-blue font-bold tracking-widest uppercase text-sm">6,400 ر.س (إجمالي رسوم الخدمة لـ 3 أشهر)</p>
+                </div>
+                <div class="p-10 grid md:grid-cols-2 gap-8 text-sm text-slate-300">
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> عمل SWOT Analysis</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> تصميم صفحة هبوط مجانية (CRO)</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> 4 تصاميم إعلانية حصرية</li>
+                    </ul>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> تتبع البكسلات وتحليل البيانات</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> بناء الجماهير المشابهة (Lookalike)</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-blue text-lg">✦</span> تقارير أداء دورية وشفافة</li>
+                    </ul>
+                </div>
+                <div class="px-10 pb-10">
+                    <div class="p-4 bg-brand-gold/5 border border-brand-gold/20 rounded-xl flex items-start gap-4">
+                        <span class="text-2xl mt-1">💡</span>
+                        <p class="text-[10px] text-brand-gold font-bold leading-relaxed">تنبيه: رسوم الخدمة تغطي الإدارة والتنفيذ والأصول الرقمية فقط، ولا تشمل ميزانية الصرف الإعلاني المدفوعة للمنصات مباشرة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="reveal text-center space-y-8 py-12">
+            <h2 class="text-4xl font-black text-white leading-tight">جاهزون لقيادة "هللة بلس" نحو الصدارة؟</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                من خلال هذه الاستراتيجية، نحن لا نهدف فقط لإطلاق إعلانات، بل لبناء "نظام نمو" مستدام يحول كل مستخدم جديد إلى قصة نجاح مالية.
+            </p>
+            <div class="pt-4">
+                <a href="https://api.whatsapp.com/send/?phone=%2B966549988810&text&type=phone_number&app_absent=0" target="_blank" class="inline-block bg-brand-emerald hover:bg-emerald-600 text-navy-950 font-black px-12 py-5 rounded-full transition-all transform hover:scale-110 shadow-2xl shadow-brand-emerald/30">
+                    الموافقة والبدء في التنفيذ
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section (Richline Identity) -->
+    <footer class="bg-navy-900 border-t border-white/5 py-16 px-6 text-center">
+        <div class="container mx-auto space-y-8">
+            <img src="https://i.ibb.co/XfxF1p9p/file.jpg" alt="Richline Logo" class="h-20 w-auto mx-auto rounded-2xl opacity-70">
+            <p class="text-slate-500 text-sm max-w-lg mx-auto leading-relaxed">
+                نحن في ريتش لاين نؤمن أن النجاح ليس صدفة، بل هو نتيجة استراتيجية دقيقة وتنفيذ احترافي.
+            </p>
+            <div class="pt-8 border-t border-white/5">
+                <p class="text-[10px] text-slate-700 font-bold tracking-[0.4em] uppercase">
+                    POWERED BY <span class="text-brand-blue">RICHLINE AGENCY</span> &copy; 2024
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
